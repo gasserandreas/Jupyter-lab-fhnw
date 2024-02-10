@@ -1,0 +1,7 @@
+numpy
+pandas
+pyproj
+Pillow
+scrapy
+openpyxl
+xlrd
