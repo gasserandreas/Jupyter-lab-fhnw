@@ -18,7 +18,7 @@ def t(x, u, s, N):
 
 # plotten
 
-def simple_plot(mean, std_def):
+def simple_plot(values, mean, std_def):
   x = np.linspace(mean - 4*std_def, mean + 4*std_def, 100)
 
   # plot normal distribution
@@ -44,3 +44,24 @@ def simple_plot(mean, std_def):
 
   # show plot
   plt.show()
+
+#  QQ-Plot
+import numpy as np
+import scipy.stats as stats
+import matplotlib.pyplot as plt
+
+def simple_qq_plot_example(data):
+
+  # Erstellen des QQ-Plots
+  fig = plt.figure(figsize=(8, 6))
+  ax = fig.add_subplot(111)
+  stats.probplot(data, dist="norm", plot=ax)
+  ax.get_lines()[1].set_color('red')  # Linie für die erwartete Normalverteilung hinzufügen (optional)
+  plt.title('QQ-Plot')
+  plt.xlabel('Theoretische Quantile')
+  plt.ylabel('Beobachtete Quantile')
+  plt.grid(True)
+  plt.show()
+
+# standard deviation
+# std = np.std(values)
